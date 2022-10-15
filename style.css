@@ -1,0 +1,89 @@
+.index-body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    background: url('bckg_image.jpeg');
+}
+.input-outline {
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0, 0.4);
+    text-align: center;
+}
+
+.input-outline h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+.un-field, .pw-field, .submit-btn {  
+    border: 0;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #0367fd;
+    background: none;
+    width: 220px;
+    outline: none;
+    padding: 14px 10px;
+    border-radius: 24px;
+    color: white;
+    transition: 0.25px;
+}
+
+.un-field:focus, .pw-field:focus {
+    width: 270px;
+    border-color: #ffc400cc;
+}
+
+.submit-btn {
+    cursor: pointer;
+    border: 0;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #ffc400ec;
+    background: none;
+    outline: none;
+    padding: 14px 10px;
+    border-radius: 24px;
+    color: white;
+    transition: 0.25px;
+}
+
+.submit-btn:hover {
+    background: #ffc400ec;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+    background-color: #0367fd;
+    width: 100vw;
+    height: 50px;
+}
+
+.navbar-title {
+    padding: 10px;
+    background-color: #00008B;
+    border-radius: 5px;
+}
+
+.navbar-title a {
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.navbar-title a:hover {
+    color: #ffc400ec;
+}
+

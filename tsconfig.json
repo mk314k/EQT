@@ -1,0 +1,23 @@
+{
+    "include": [
+      "./src/*.ts",
+      "./test/*.ts"
+    ],
+    
+    "compilerOptions": {
+      "strict": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitOverride": true,
+      "noPropertyAccessFromIndexSignature": true,
+      "noUncheckedIndexedAccess": true,
+      
+      "target": "ES2021",
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "outDir": "dist"
+    }
+  }
+  

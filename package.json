@@ -19,13 +19,15 @@
     "express-async-handler": "^1.2.0",
     "http-status-codes": "^2.1.4",
     "node-fetch": "^2.6.7",
-    "parserlib": "file:/./lib/parserlib-3.2.3.tgz"
+    "parserlib": "file:/./lib/parserlib-3.2.3.tgz",
+    "sqlite3": "^5.1.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/mocha": "^9.1.0",
     "@types/node": "^14.14.25",
     "@types/node-fetch": "^2.5.12",
+    "@types/sqlite3": "^3.1.8",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "browserify": "^17.0.0",

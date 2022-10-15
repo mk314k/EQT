@@ -1,9 +1,16 @@
 .index-body {
-    margin: 0px;
+    margin: 5px;
     padding: 0px;
     font-family: sans-serif;
     background: url('bckg_image.jpeg');
 }
+
+.tutor-body {
+    margin: 0px;
+    padding: 0px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .input-outline {
     width: 300px;
     padding: 30px;
@@ -75,6 +82,7 @@
     padding: 10px;
     background-color: #00008B;
     border-radius: 5px;
+    margin: 5px;
 }
 
 .navbar-title a {
@@ -86,4 +94,16 @@
 .navbar-title a:hover {
     color: #ffc400ec;
 }
+
+.tutor-core {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-sidesplit {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
 

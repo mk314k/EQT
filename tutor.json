@@ -29,7 +29,7 @@
     "availability": "10:00am-11:00am",
     "volunteer": "yes",
     "description": "Visa"
-    "picture": "tutor3.jpeg"
+    "picture": "tutor4.jpeg"
   },
   {
     "name": "Karti Mish",
@@ -37,7 +37,7 @@
     "availability": "12:00pm-1:00pm",
     "volunteer": "yes",
     "description": "Visa"
-    "picture": "tutor3.jpeg"
+    "picture": "tutor5.jpeg"
   },
   {
     "name": "Yolanda Singh",
@@ -45,7 +45,7 @@
     "availability": "12:00pm-1:00pm",
     "volunteer": "no",
     "description": "Visa"
-    "picture": "tutor3.jpeg"
+    "picture": "tutor6.jpeg"
   }
 ]
 }

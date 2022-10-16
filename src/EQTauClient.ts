@@ -15,7 +15,6 @@ function getForm ():FormData {
         }
         else { data.append(field.name, field.value); }
       }
-      console.log(field.value);
     }
     return data;
   }
@@ -27,7 +26,7 @@ function printOutput(outputArea: HTMLElement, message: string): void {
     // scroll the output area so that what we just printed is visible
     outputArea.scrollTop = outputArea.scrollHeight;
 }
-function pageLoop(mainArea:HTMLElement, state = 3){
+function pageLoop(mainArea:HTMLElement, state = 2, extra:any = ''){
   if (state == 1){
     //SignUP Page
     const signupButton: HTMLElement = document.getElementById('signUp')??assert.fail('');
@@ -47,16 +46,17 @@ function pageLoop(mainArea:HTMLElement, state = 3){
         const subject2:string = data.get("subject2") as string;
         const avail1:string = data.get("avail1") as string;
         const avail2:string = data.get("avail2") as string;
-        const tutor = new Tutor(fullName,password,[subject1,subject2],[avail1,avail2]);
+        const tutor = new Tutor(fullName,[subject1,subject2],[avail1,avail2]);
         htmlcontent = tutor.generateHTML();
         state = 3
+        extra = tutor;
       }
       else{
         // htmlcontent = updateTutee(data);
         state =4
       }
       mainArea.innerHTML = htmlcontent;
-      pageLoop(mainArea, state)
+      pageLoop(mainArea, state, extra);
       return false;
     });
   }else if (state==2){
@@ -64,7 +64,13 @@ function pageLoop(mainArea:HTMLElement, state = 3){
     const logInButton: HTMLElement = document.getElementById('logIn')??assert.fail('');
     logInButton.addEventListener('click', (event:MouseEvent)=>{
       const data = getForm();
-      var htmlcontent = '';
+      const name:string = data.get('uname') as string;
+      const password:string = data.get('password') as string;
+      const clientState = client.checkID(name,password);
+      if (clientState>2){
+        mainArea.innerHTML = client.getHTMLbyName(name);
+        pageLoop(mainArea,clientState);
+      }
       return false;
     });
     const signTabButton: HTMLElement = document.getElementById('signUpTab')??assert.fail('');
@@ -83,7 +89,8 @@ function pageLoop(mainArea:HTMLElement, state = 3){
     const slider: HTMLInputElement = document.getElementById('myRange') as HTMLInputElement;
     const tuteeSelection: HTMLElement = document.getElementById('tutorTable')??assert.fail('');
     slider.oninput = function(){
-      tuteeSelection.innerHTML = client.fetchMatchedTutee(slider.value);
+      const slider: HTMLInputElement = document.getElementById('myRange') as HTMLInputElement;
+      tuteeSelection.innerHTML = client.fetchMatchedTutee(slider.value ,extra);
     };
     //Tutor Page
 
@@ -106,10 +113,7 @@ async function main(): Promise<void> {
     await client.start();
     const mainArea: HTMLElement = document.getElementById('mainArea') ?? assert.fail('missing main div block');
 
-    const tutor = new Tutor('Ram','mohan',['math','physics'],['true','true']);
-
-    mainArea.innerHTML = tutor.generateHTML();
-    console.log(tutor.generateHTML());
+    mainArea.innerHTML = loginPage;
     pageLoop(mainArea);
 
     //TODO A bunch of other interaction to get tutor name

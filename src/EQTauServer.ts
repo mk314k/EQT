@@ -34,6 +34,7 @@ export class WebServer {
 
         this.app.get('/getData', function(request, response) {
             const content = fs.readFileSync("db/data.kesh", { encoding: 'utf-8' });
+            console.log(content);
             response
                 .status(HttpStatus.OK)
                 .type('text')

@@ -79,10 +79,12 @@
 }
 
 .navbar-title {
+    width: 90px;
     padding: 10px;
     background-color: #00008B;
     border-radius: 5px;
     margin: 5px;
+    color: white;
 }
 
 .navbar-title a {

@@ -2,7 +2,10 @@
 1. npm install
 2. npm run server
    npm run client
-   
+# Our IDEA:
+Check out here for our User Interface:
+https://www.figma.com/file/doGtakRhWGRFLbwEbeIMuw/Tutoring-Website-(Community)?node-id=4%3A2
+
 # Our Motivation Behind EQT
 The COVID-19 Pandemic and initial school closures have increased inequality in educational outcomes across racial and socioeconomic lines, creating an urgency to identify programs and policies—such as tutoring—to mitigate COVID learning loss. The COVID educational loss impacts students in disadvantaged backgrounds more compared to their counterparts with high socioeconomic ranking. In fact, according to a Pew Survey, 20% of upper class households have hired someone to help with their children's educational needs, while only 7% of households in the lower and middle class households have hired someone. According to the OECD, the COVID-19 learning loss is projected to decrease GDP by 1.5% per year, on average. This is assuming that the learning loss can be recovered. However, this is an extremely tricky sitation; if COVID learning loss has occurred proportionally among all age groups. As a result, teachers will need to modify their instruction to fill in those gaps. This is true for all levels of education; therefore, it is difficult to see how this can be recovered for those already in school as we'll be lowering the level of the studies for those in school to recompensate for the learning loss. Therefore, the potential GDP loss is likely to be even higher. Loss in GDP is not only detrimental to the quality of life, but it also slows growth and innovation. Possessing fewer skills as a result of learning loss means workers will have decreased wages over their lifetime. In fact, the OPDC estimates the loss in income to be 3% over the lifetime of those who experienced the learning loss due to COVID. In addition, this affects individuals in different socioeconomic groups disproportionately. Since those on the higher economic ladder can afford learning outside of the classroom, their reduced income is not quite as large as the reduction in income of those who can not afford learning outside the classroom. This is why we're seeking to make our tutorial services as accessible as possible, usable even by those traditionally unable to afford tutorial services. 
 

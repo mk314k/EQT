@@ -1,17 +1,3 @@
-export class Tutee{
-    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<Boolean>){
-
-    }
-    /* IDK WHAT TO DO HERE SO...
-    public toString:string{
-        return this.name.toString
-    }
-    */
-    public generateHTML():string{
-        return `
-        `
-    }
-}
 
 export class Tutee{
     public readonly isFunded = false;
@@ -19,7 +5,7 @@ export class Tutee{
     public readonly seekingSubjects = '';
     public readonly photo='';
     public readonly info='';
-    public constructor(public readonly name:string, public readonly password:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>){
+    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>){
     
     } 
 

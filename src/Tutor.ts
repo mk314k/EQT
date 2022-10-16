@@ -11,7 +11,7 @@ export class Tutor{
     public readonly points =0;
     public readonly photo ='';
     public readonly info ='';
-    public constructor(public readonly name:string, public readonly password:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>){
+    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>){
     }
     public generateHTML():string{
         return `

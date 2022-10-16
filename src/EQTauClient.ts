@@ -36,25 +36,32 @@ function pageLoop(mainArea:HTMLElement, state = 2, extra:any = ''){
       pageLoop(mainArea, 2);
       return false;
     });
-    signupButton.addEventListener('click', (event:MouseEvent)=>{
+    signupButton.addEventListener('click', async (event:MouseEvent)=>{
       const data = getForm();
+      const fullName:string = data.get("fullName") as string;
+      const password:string = data.get("password") as string;
+      const subjects:string = data.get("subjects") as string;
+      const info:string = data.get("info") as string;
+      const avail1:string = data.get("aval1") as string;
+      const photo:string = data.get("photo") as string;
       var htmlcontent = '';
+      var usertype = '';
       if (data.has("tutor")){
-        const fullName:string = data.get("fullName") as string;
-        const password:string = data.get("password") as string;
-        const subject1:string = data.get("subject1") as string;
-        const subject2:string = data.get("subject2") as string;
-        const avail1:string = data.get("avail1") as string;
-        const avail2:string = data.get("avail2") as string;
-        const tutor = new Tutor(fullName,[subject1,subject2],[avail1,avail2]);
+        const tutor = new Tutor(fullName,subjects.split(','),avail1.split(','),photo);
         htmlcontent = tutor.generateHTML();
         state = 3
         extra = tutor;
+        usertype ='tutor';
       }
       else{
-        // htmlcontent = updateTutee(data);
+        const tutee = new Tutor(fullName,subjects.split(','),avail1.split(','),photo);
+        htmlcontent = tutee.generateHTML();
+        state = 3
+        extra = tutee;
         state =4
+        usertype ='tutee';
       }
+      await client.save(`${usertype}|${fullName}|${password}|${subjects}|${avail1}|${info}|0|0|${photo}`);
       mainArea.innerHTML = htmlcontent;
       pageLoop(mainArea, state, extra);
       return false;
@@ -68,8 +75,9 @@ function pageLoop(mainArea:HTMLElement, state = 2, extra:any = ''){
       const password:string = data.get('password') as string;
       const clientState = client.checkID(name,password);
       if (clientState>2){
-        mainArea.innerHTML = client.getHTMLbyName(name);
-        pageLoop(mainArea,clientState);
+        const userProfile = client.getHTMLbyName(name);
+        mainArea.innerHTML = userProfile.generateHTML();
+        pageLoop(mainArea,clientState,userProfile);
       }
       return false;
     });
@@ -90,6 +98,7 @@ function pageLoop(mainArea:HTMLElement, state = 2, extra:any = ''){
     const tuteeSelection: HTMLElement = document.getElementById('tutorTable')??assert.fail('');
     slider.oninput = function(){
       const slider: HTMLInputElement = document.getElementById('myRange') as HTMLInputElement;
+      console.log(slider.value)
       tuteeSelection.innerHTML = client.fetchMatchedTutee(slider.value ,extra);
     };
     //Tutor Page

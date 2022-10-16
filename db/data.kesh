@@ -1,7 +1,7 @@
 tutor|Kartikesh|12345|Math,Physics|9AM, 12PM|MIT Student|1000|10|Kartikesh.jpeg|
 tutor|Clark|abcd|Chemistry,Biology|9AM,10AM, 11AM, 12PM|Researcher, MIT Student|2000|100|Clark.jpeg|
 tutor|Lauren|12345|Math,Physics|9AM, 12PM|MIT Student|1000|10|Kartikesh.jpg|
-tutor|Kartikesh|12345|Math,Physics|9AM, 12PM|MIT Student|1000|10|Kartikesh.jpg|
-tutor|Kartikesh|12345|Math,Physics|9AM, 12PM|MIT Student|1000|10|Kartikesh.jpg|
-tutor|Kartikesh|12345|Math,Physics|9AM, 12PM|MIT Student|1000|10|Kartikesh.jpg|
-tutor|Kartikesh|12345|Math,Physics|9AM, 12PM|MIT Student|1000|10|Kartikesh.jpg|
+tutee|mytutee1|12345|Math,Physics|9AM, 12PM|MIT Student|40|10|Kartikesh.jpg|
+tutee|mytutee2|12345|Math,Physics|9AM, 12PM|MIT Student|20|10|Kartikesh.jpg|
+tutee|mytutee3|12345|Math,Physics|9AM, 12PM|MIT Student|50|10|Kartikesh.jpg|
+tutee|mytutee4|12345|Math,Physics|9AM, 12PM|MIT Student|30|10|Kartikesh.jpg|

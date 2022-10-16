@@ -1,0 +1,72 @@
+{"tutors":[
+  {
+    "name": "Aayushma Gautam",
+    "subject": "physics, math",
+    "availability": "ExxonMobil",
+    "volunteer": "yes",
+    "description": "Visa"
+    "picture": "tutor1.jpeg"
+  },
+  {
+    "description": "School Supplies",
+    "date": "2021-08-30",
+    "vendor": "Wal-Mart",
+    "account": "education",
+    "payment": "Visa",
+    "amount": 30.0,
+    "memo": "4 notebooks and 2 folders for each kid; 3 packs of notebook paper; a box of pencils"
+  },
+  {
+    "description": "Plumber",
+    "date": "2021-10-02",
+    "vendor": "Frank's Plumbing",
+    "account": "household",
+    "payment": "Cash",
+    "amount": 65.0,
+    "memo": "Called Frank to fix a deep clog in the front bathroom affecting the toilet, sink, and shower"
+  },
+  {
+    "description": "Thanksgiving Food",
+    "date": "2020-11-25",
+    "vendor": "Trader Joes",
+    "account": "celebration",
+    "payment": "Visa",
+    "amount": 240.57
+  },
+  {
+    "description": "Winter Clothes",
+    "date": "2021-10-15",
+    "vendor": "Uniqlo",
+    "account": "clothes",
+    "payment": "Cash",
+    "amount": 150.45,
+    "memo": "2 jackets and 1 sweater"
+  },
+  {
+    "description": "Amusement park",
+    "date": "2021-08-20",
+    "vendor": "Six Flags",
+    "account": "recreational",
+    "payment": "Visa",
+    "amount": 149.99,
+    "memo": "Got the seasonal pass"
+  },
+  {
+    "description": "Birthday Dine-out",
+    "date": "2021-06-28",
+    "vendor": "Semolina's Kitchen",
+    "account": "recreational",
+    "payment": "Cash",
+    "amount": 90.15
+  },
+  {
+    "description": "Toys",
+    "date": "2021-04-15",
+    "vendor": "Target",
+    "account": "management",
+    "payment": "Visa",
+    "amount": 48.65,
+    "memo": "Got a toy for each of the children"
+  }
+]
+}

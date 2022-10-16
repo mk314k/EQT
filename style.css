@@ -29,7 +29,7 @@
 
 }
 
-.un-field, .pw-field, .submit-btn {  
+.un-field, .pw-field, .login-btn, .signup-btn, .name-field, .signup-submit-btn{  
     border: 0;
     display: block;
     margin: 20px auto;
@@ -44,12 +44,12 @@
     transition: 0.25px;
 }
 
-.un-field:focus, .pw-field:focus {
+.un-field:focus, .pw-field:focus, .name-field:focus {
     width: 270px;
     border-color: #ffc400cc;
 }
 
-.submit-btn {
+.login-btn, .signup-btn, .signup-submit-btn{
     cursor: pointer;
     border: 0;
     display: block;
@@ -64,7 +64,7 @@
     transition: 0.25px;
 }
 
-.submit-btn:hover {
+.login-btn:hover, .signup-btn:hover, .signup-submit-btn:hover {
     background: #ffc400ec;
 }
 
@@ -103,6 +103,47 @@
 .left-sidesplit {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.tutor-second-level {
+    display: flex;
+    gap: 10px;
+
+}
+
+.tutor-personal {
+    padding: 3px;
+    border: 3px solid #00008B;
+}
+
+.main-container {
+    display: flex;
+
+}
+
+.tutor-image img {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #00008B;
+}
+
+.tutor-subject {
+    margin-top: 5px;
+    border: 3px solid #00008B;
+    padding: 3px;
+}
+
+.tutor-table {
+    margin-top: 5px;
+    border: 3px solid #00008B;
+    padding: 3px;
+}
+
+.right-sideSplit {
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 3px;
+    border: 3px solid #00008B;
 }
 
 

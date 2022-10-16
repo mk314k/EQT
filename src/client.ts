@@ -28,7 +28,7 @@ export class Client {
     private htmlFromList(data:Array<Array<string>>):string{
         var result = '';
         for (let entry of data){
-            result = result + `<span id=${entry[1]}>Name: ${entry[1]} Subjects: ${entry[3]} </span>`;
+            result = result + `<span class="general-text" id=${entry[1]}>Name: ${entry[1]} Subjects: ${entry[3]} </span><br>`;
         }
         return result;
     }
@@ -36,23 +36,28 @@ export class Client {
         let result =[]
         for (let entry of this.database){
             if (entry[0] == 'tutee'){
-                if (parseInt(entry[6]??'')>parseInt(sliderVal)){
+                if (parseInt(entry[6]??'')<=parseInt(sliderVal)){
                     const tuteeAvail:Array<string> = entry[4]?.split(',')??[];
                     var match:boolean = false;
                     for (let tm of tuteeAvail){
-                        if (tm in tutor.availabilty){
-                            match = true;
+                        for (let tm1 of tutor.availabilty){
+                            if (tm1.includes(tm)){
+                                match = true;
+                            }
                         }
                     }
                     if (match){
                         const tuteeSubs:Array<string> = entry[3]?.split(',')??[];
                         match =false;
                         for (let tm of tuteeSubs){
-                            if (tm in tutor.subjects){
-                                match = true;
+                            for (let tm1 of tutor.subjects){
+                                if (tm1.includes(tm)){
+                                    match = true;
+                                }
                             }
                         }
                         if (match){
+                            console.log(entry);
                             result.push(entry);
                         }
                     }
@@ -78,19 +83,23 @@ export class Client {
         }
         return 1;
     }
-    public getHTMLbyName(name:string):string{
+    public getHTMLbyName(name:string):Tutor|Tutee{
         for (let entry of this.database){
             if (entry[1] == name){
                 if (entry[0]=='tutor'){
                     const subjects:Array<string> =entry[3]?.split(',')??[];
-                    return new Tutor(entry[1],subjects,entry[4]?.split(',')??[]).generateHTML();
+                    return new Tutor(entry[1],subjects,entry[4]?.split(',')??[],entry[8]);
                 }else{
                     const subjects:Array<string> =entry[3]?.split(',')??[];
-                    return new Tutee(entry[1],subjects, entry[4]?.split(',')??[]).generateHTML();
+                    return new Tutee(entry[1],subjects, entry[4]?.split(',')??[],entry[8]);
                 }
             }
         }
-        return '';
+        return new Tutor('',[],[]);
+    }
+    public async save(data:string):Promise<void>{
+        const response = await fetch('http://localhost:8790/setData/'+data);
+        await response.text();
     }
 
 

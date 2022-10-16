@@ -100,6 +100,7 @@
 .tutor-core {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .left-sidesplit {
@@ -115,7 +116,7 @@
 
 .tutor-personal {
     padding: 3px;
-    border: 3px solid #00008B;
+    /* border: 3px solid #00008B; */
 }
 
 .main-container {
@@ -126,18 +127,18 @@
 .tutor-image img {
     width: 150px;
     height: 150px;
-    border: 3px solid #00008B;
+    /* border: 3px solid #00008B; */
 }
 
 .tutor-subject {
     margin-top: 5px;
-    border: 3px solid #00008B;
+    /* border: 3px solid #00008B; */
     padding: 3px;
 }
 
 .tutor-table {
     margin-top: 5px;
-    border: 3px solid #00008B;
+    /* border: 3px solid #00008B; */
     padding: 3px;
 }
 
@@ -145,8 +146,23 @@
     margin-right: 10px;
     margin-top: 15px;
     padding: 3px;
-    border: 3px solid #00008B;
+    /* border: 3px solid #00008B; */
 }
 
+.main-container {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+}
 
+.general-text {
+    color: white;
+    font-size: 1em;
+}
 
+.available-head {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+
+}

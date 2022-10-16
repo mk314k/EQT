@@ -34,11 +34,18 @@ export class WebServer {
 
         this.app.get('/getData', function(request, response) {
             const content = fs.readFileSync("db/data.kesh", { encoding: 'utf-8' });
-            console.log(content);
             response
                 .status(HttpStatus.OK)
                 .type('text')
                 .send(content);
+        });
+        this.app.get('/setData/:data', function(request, response) {
+            const {data} = request.params;
+            fs.appendFileSync("db/data.kesh", data);
+            response
+                .status(HttpStatus.OK)
+                .type('text')
+                .send('added');
         });
         // this.app.get('/', function(request, response) {
         //     const content = fs.readFileSync("EQT.html", { encoding: 'utf-8' });

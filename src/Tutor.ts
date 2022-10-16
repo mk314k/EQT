@@ -9,31 +9,33 @@ export class Quantity{
 export class Tutor{
     public readonly money:number =0;
     public readonly points =0;
-    public readonly photo ='';
+    public photo ='';
     public readonly info ='';
-    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>){
+    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>,photo =''){
+        this.photo =photo;
     }
+
     public generateHTML():string{
         return `
-        <div class="navbar-links">
+    <div class="navbar-links">
         <button id="logOutTab" class="navbar-title">Log Out</button>    
     </div>
     <div id="main-container" class="main-container">
         <div id="leftSidesplit" class="left-sidesplit">
-            <div id="tutorCore" class="tutor-core">
-                <p id="tutor-title">Tutor:${this.name} </p>
-                <p id="tutor-money">Money:${this.money} </p>
-                <p id="tutor-points">Points:${this.points} </p>
+            <div id="tutorCore" class="tutor-core general-text">
+                <p id="tutor-title">Tutor: ${this.name} </p>
+                <p id="tutor-money">Money: ${this.money} </p>
+                <p id="tutor-points">Points: ${this.points} </p>
             </div>
             <div id="tutorSecondLevel" class="tutor-second-level">
                 <div id="tutorImageContainer" class="tutor-image">
-                    <img id="tutorImage" src=${this.photo} alt="Tutor Image"> 
+                    <img id="tutorImage" src=${"img/"+this.photo} alt="Tutor Image"> 
                 </div>
-                <div id="tutorPersonal" class="tutor-personal">
+                <div id="tutorPersonal" class="tutor-personal general-text">
                     ${this.info}
                 </div>
             </div>
-            <div id="tutorSubject" class="tutor-subject">
+            <div id="tutorSubject" class="tutor-subject general-text">
                 ${this.subjects.toString()}
             </div>
             <div class="slidecontainer">
@@ -44,10 +46,9 @@ export class Tutor{
             </div>
     
         </div>
-        <div id="rightSidesplit" class="right-sideSplit">
-            Availability
-            <div id="availabilityBox" class="Availability-box">
-            ${this.availabilty.toString()}
+        <div id="rightSidesplit" class="right-sideSplit general-text">
+            <div class="available-head">Availability</div>
+            <div id="availabilityBox" class="Availability-box"> ${this.availabilty.toString()}
             </div>
     
         </div>

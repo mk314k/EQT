@@ -3,9 +3,10 @@ export class Tutee{
     public readonly isFunded = false;
     public readonly availability = '';
     public readonly seekingSubjects = '';
-    public readonly photo='';
+    public photo='';
     public readonly info='';
-    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>){
+    public constructor(public readonly name:string, public readonly subjects:Array<string>, public readonly availabilty:Array<string>,photo=''){
+        this.photo = photo;
     
     } 
 
